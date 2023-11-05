@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Code Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Code Snippets from My GitHub</h1>
+        <!-- Replace 'your-repo-link' with your GitHub raw code link -->
+        <pre><code id="code-snippet"></code></pre>
+    </div>
+
+    <script>
+        // Fetch your code snippet from GitHub using Fetch API
+        fetch('your-repo-link')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('code-snippet').textContent = data;
+            })
+            .catch(error => console.log('Error fetching code:', error));
+    </script>
+</body>
+</html>
